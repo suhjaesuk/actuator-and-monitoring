@@ -6,10 +6,10 @@
 비록 비 기능적 요소이지만 실무에서 문제없이 장애에 대응할 수 있는 능력을 키우고자 강의를 듣습니다.
 
 ### 준비
-**build.gradle에 추가**
+**엑츄에이터 라이브러리 의존 추가**
 - `implementation 'org.springframework.boot:spring-boot-starter-actuator'` <br>
 
-**application.yml에 추가** <br>
+**application.yml에 엑츄에이터 설정 추가** <br>
 예) 모든 엑츄에이터 엔드포인트를 Http에 노출 단, env, beans는 제외
 ```
 management:
@@ -33,3 +33,9 @@ management:
 - https://prometheus.io/download/ <br>
 
 다운로드 및 prometheus.exe 실행 후 localhost:9090 접속 확인
+
+**마이크로미터 라이브러리 의존 추가**
+- `implementation 'io.micrometer:micrometer-registry-prometheus'`
+- 스프링부트와 엑츄에이터가 자동으로 마이크로미터 프로메테우스 구현체를 등록해서 동작하도록 설정해줌
+- 스프링 실행 후 localhost:8080/actuator/prometheus 접속 
+
