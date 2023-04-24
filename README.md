@@ -34,6 +34,8 @@ management:
 
 다운로드 및 prometheus.exe 실행 후 localhost:9090 접속 확인
 
+![화면 캡처 2023-04-24 135702](https://user-images.githubusercontent.com/110963294/233903473-f65fec28-b764-4c68-bc90-14b3cdb3a883.png)
+
 **마이크로미터 라이브러리 의존 추가**
 - `implementation 'io.micrometer:micrometer-registry-prometheus'`
 - 스프링부트와 엑츄에이터가 자동으로 마이크로미터 프로메테우스 구현체를 등록해서 동작하도록 설정해줌
