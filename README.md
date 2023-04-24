@@ -6,5 +6,25 @@
 비록 비 기능적 요소이지만 실무에서 문제없이 장애에 대응할 수 있는 능력을 키우고자 강의를 듣습니다.
 
 ### 준비
-build.gradle에 추가
-- `implementation 'org.springframework.boot:spring-boot-starter-actuator'`
+**build.gradle에 추가**
+- `implementation 'org.springframework.boot:spring-boot-starter-actuator'` <br>
+
+**application.yml에 추가** <br>
+예) 모든 엑츄에이터 엔드포인트를 Http에 노출 단, env, beans는 제외
+```
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "env,beans"
+```        
+
+예) 셧다운 기능 엔드포인트를 Http에 노출
+```
+management:
+  endpoint:
+    shutdown:
+      enabled:
+        true
+```
