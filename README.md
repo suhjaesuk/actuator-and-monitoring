@@ -28,3 +28,7 @@ management:
       enabled:
         true
 ```
+
+**프로메테우스 설치**
+- https://prometheus.io/download/
+실행 후 localhost:9090/ 접속 확인
