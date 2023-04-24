@@ -21,7 +21,6 @@ management:
       exposure:
         include: "*"
 
-
 info:
   app:
     name: actuator-app
@@ -30,3 +29,9 @@ info:
 logging:
   level:
     hello.actuator.controller: debug
+
+
+server:
+  tomcat:
+    mbeanregistry:
+      enabled: true
