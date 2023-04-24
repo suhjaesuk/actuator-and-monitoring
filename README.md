@@ -41,3 +41,31 @@ management:
 - 스프링부트와 엑츄에이터가 자동으로 마이크로미터 프로메테우스 구현체를 등록해서 동작하도록 설정해줌
 - 스프링 실행 후 localhost:8080/actuator/prometheus 접속 
 
+**prometheus 폴더 안에 있는 prometheus.yml에 코드 추가**
+```
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s 
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+
+rule_files:
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+      
+# 추가
+  - job_name: "spring-actuator" #수집 이름 -> 임의의 이름 사용
+    metrics_path: '/actuator/prometheus' # 수집 경로
+    scrape_interval: 1s # 수집 주기 -> 운영에서는 10 ~ 60초로 설정 권장 (요청으로 인한 성능저하 발생)
+    static_configs: 
+      - targets: ['localhost:8080'] #ip, port 지정
+```
+프로메테우스 재실행 후 localhost:9090/targets 접속 확인
+
+![화면 캡처 2023-04-24 142200](https://user-images.githubusercontent.com/110963294/233906629-1061aa92-2ca1-477d-ab64-8ad25d47a288.png)
+
