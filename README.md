@@ -69,3 +69,17 @@ scrape_configs:
 
 ![화면 캡처 2023-04-24 142200](https://user-images.githubusercontent.com/110963294/233906629-1061aa92-2ca1-477d-ab64-8ad25d47a288.png)
 
+**그라파나 설치**
+- https://grafana.com/grafana/download?platform=windows
+- 설치 후 bin폴더의 grafana-server.exe 실행
+- 실행 후 localhost:3000 접속 확인
+- admin / admin으로 로그인
+
+![화면 캡처 2023-04-24 152100](https://user-images.githubusercontent.com/110963294/233915103-b4623704-dffd-47d4-b5e1-8e9104eb61ed.png)
+
+**그라파나에 프로메테우스 연결**
+- 설정 - Configuration - add data source - Prometheus
+- uri에 http://localhost:9090 입력
+
+![화면 캡처 2023-04-24 152708](https://user-images.githubusercontent.com/110963294/233916085-1aa1042f-0113-4c9f-9519-3906c7f9f7ff.png)
+
